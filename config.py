@@ -1,0 +1,13 @@
+PDF_FOLDER = "data" 
+OUTPUT_DIR = "processed_chunks"
+INDEX_DIR = "faiss_index"
+CHUNK_SIZE = 1200
+CHUNK_OVERLAP = 150
+EMBED_MODEL = "sentence-transformers/all-mpnet-base-v2"
+LLM_TEMPERATURE = 0
+LLM_TOP_P = 0.9
+LLM_MAX_TOKENS = 500
+MODEL = "mistralai/mixtral-8x7b-instruct"
+# MODEL="meta-llama/llama-3-70b-instruct"#High intensity and accuracy
+API_URL = "https://openrouter.ai/api/v1/chat/completions"
+TOP_K_RESULTS = 3

@@ -1,0 +1,24 @@
+# PDF & Text Processing
+PyMuPDF==1.22.5
+regex==2025.8.21
+
+# LangChain & Embeddings
+langchain==0.1.249
+langchain-community==0.0.269
+
+# HuggingFace
+sentence-transformers==2.2.2
+transformers==4.41.0
+torch==2.1.0
+
+# FAISS
+faiss-cpu==1.7.4
+
+# Streamlit
+streamlit==1.28.0
+
+# Environment variables
+python-dotenv==1.0.1
+
+# HTTP requests
+requests==2.31.0
