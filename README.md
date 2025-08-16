@@ -16,62 +16,73 @@ If you want to use it, you can manually add it to the `data/` folder before buil
 
 👉 You can also **add any other books you want** to the `data/` folder, and the assistant will automatically process them.
 
-
 ---
 
 ## ⚡ Features
 
-- Extracts text from PDFs and splits it into chunks for better retrieval.
-- Embeds text using **sentence-transformers** for semantic search.
-- Builds a **FAISS vector index** for fast similarity search.
-- Integrates **RAG pipeline with memory** for conversational context.
-- Answers questions **only based on provided content**, with source references.
-- Streamlit web interface for easy interaction.
+- Extracts text from PDFs and splits it into chunks for better retrieval.  
+- Embeds text using **sentence-transformers** for semantic search.  
+- Builds a **FAISS vector index** for fast similarity search.  
+- Integrates **RAG pipeline with memory** for conversational context.  
+- Answers questions **only based on provided content**, with source references.  
+- Streamlit web interface for easy interaction.  
 
 ---
 
-# 🛠 Installation  
+## 🛠 Installation
 
-Clone the repository:  
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Ahmedsalah-28/AI-BookMind.git
 cd AI-BookMind
+```
 
----
+### 2. Create a Conda environment
 
-##  Create a Conda environment:
-
+```bash
 conda create -n ai_books_rag python=3.11 -y
 conda activate ai_books_rag
----
+```
 
-## Install dependencies:
+### 3. Install dependencies
 
-
+```bash
 pip install -r requirements.txt
+```
+
+### 4. Set your API key  
+
+Create a `.env` file based on `.env.example` and add your OpenRouter API key:
+
+```bash
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
 
 ---
-
-## Set your API key:
-
-OPENROUTER_API_KEY=your_openrouter_api_key_here
 
 ## 🚀 Usage
 
-Build the FAISS index from your PDFs:
+### 1. Build the FAISS index from your PDFs  
 
+```bash
 python build_index.py
+```
 
-## Run the Streamlit chatbot:
+### 2. Run the Streamlit chatbot  
 
+```bash
 streamlit run app.py
+```
 
-💡 Ask any question about AI, ML, or LLMs — answers are based only on your PDF content.
-✅ Sources are displayed for reference.
+💡 Ask any question about AI, ML, or LLMs — answers are based only on your PDF content.  
+✅ Sources are displayed for reference.  
+
+---
 
 ## 🗂 File Structure
 
+```
 .
 ├─ data/                 # Folder containing PDFs
 ├─ processed_chunks/     # Auto-generated text chunks
@@ -85,10 +96,10 @@ streamlit run app.py
 ├─ requirements.txt      # Project dependencies
 ├─ .env.example          # Environment variables example
 └─ README.md             # Project documentation
+```
 
-## 📜 License
+---
+
+## 📜 License  
 
 MIT License - free to use, modify, and share.
-
-
-
