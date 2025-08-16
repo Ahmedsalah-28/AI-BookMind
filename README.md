@@ -38,16 +38,20 @@ Clone the repository:
 git clone https://github.com/Ahmedsalah-28/AI-BookMind.git
 cd AI-BookMind
 
+---
 
 ##  Create a Conda environment:
 
 conda create -n ai_books_rag python=3.11 -y
 conda activate ai_books_rag
+---
 
 ## Install dependencies:
 
 
 pip install -r requirements.txt
+
+---
 
 ## Set your API key:
 
@@ -85,5 +89,6 @@ streamlit run app.py
 ## 📜 License
 
 MIT License - free to use, modify, and share.
+
 
 
