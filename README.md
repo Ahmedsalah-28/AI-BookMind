@@ -9,7 +9,10 @@ This project allows you to ask questions about content in your PDFs and get **ac
 
 - `0406_Software_Engineering_for_Data_Scientists`  
 - `Hands-On Large Language Models Language Understanding and Generation`  
-- `Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (2nd Edition)` by Aurelien Geron
+
+⚠️ Note:  
+The book *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (2nd Edition) by Aurelien Geron* was not uploaded due to its large file size.  
+If you want to use it, you can manually add it to the `data/` folder before building the FAISS index.  
 
 👉 You can also **add any other books you want** to the `data/` folder, and the assistant will automatically process them.
 
@@ -83,5 +86,6 @@ Sources are displayed for reference.
 📜 License
 
 MIT License - free to use, modify, and share.
+
 
 
