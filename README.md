@@ -11,6 +11,9 @@ This project allows you to ask questions about content in your PDFs and get **ac
 - `Hands-On Large Language Models Language Understanding and Generation`  
 - `Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (2nd Edition)` by Aurelien Geron
 
+👉 You can also **add any other books you want** to the `data/` folder, and the assistant will automatically process them.
+
+
 ---
 
 ## ⚡ Features
@@ -80,4 +83,5 @@ Sources are displayed for reference.
 📜 License
 
 MIT License - free to use, modify, and share.
+
 
