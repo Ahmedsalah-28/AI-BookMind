@@ -30,34 +30,39 @@ If you want to use it, you can manually add it to the `data/` folder before buil
 
 ---
 
-## 🛠 Installation
+# 🛠 Installation  
 
-Clone the repository:
+Clone the repository:  
+
 ```bash
-git clone https://github.com/yourusername/ai-ml-books-rag-chat.git](https://github.com/Ahmedsalah-28/AI-BookMind/tree/main
-cd ai-ml-books-rag-chat
-Create a Conda environment:
+git clone https://github.com/Ahmedsalah-28/AI-BookMind.git
+cd AI-BookMind
 
+
+Create a Conda environment:
 
 conda create -n ai_books_rag python=3.11 -y
 conda activate ai_books_rag
+
 Install dependencies:
 
 
 pip install -r requirements.txt
+
 Set your API key:
 
-
 OPENROUTER_API_KEY=your_openrouter_api_key_here
+
 🚀 Usage
+
 Build the FAISS index from your PDFs:
 
-
 python build_index.py
+
 Run the Streamlit chatbot:
 
-
 streamlit run app.py
+
 💡 Ask any question about AI, ML, or LLMs — answers are based only on your PDF content.
 ✅ Sources are displayed for reference.
 
@@ -76,5 +81,8 @@ streamlit run app.py
 ├─ requirements.txt      # Project dependencies
 ├─ .env.example          # Environment variables example
 └─ README.md             # Project documentation
+
 📜 License
+
 MIT License - free to use, modify, and share.
+
