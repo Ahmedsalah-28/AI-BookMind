@@ -92,7 +92,7 @@ if "memory" not in st.session_state:
 memory = st.session_state.memory
 
 # ==========================
-# Prompt Template (improved)
+# Prompt Template 
 # ==========================
 prompt_template = PromptTemplate(
     input_variables=["history", "chat_history", "context", "question"],
@@ -221,6 +221,26 @@ def run_rag(user_q: str):
     return answer, sources
 
 
+# def classify_query(llm, user_input):
+#     with st.spinner("Generating answer..."):
+#         prompt = f"""
+#         You are a strict router.
+
+#         Rules:
+#         - If the user message is ONLY a greeting
+#         (examples: hi, hello, hey, how are you, good morning, thanks, who are you, etc.) → output CHAT.
+#         - For ANY other message (including technical questions, definitions, or unrelated topics) → output RAG.
+#         - Never explain or answer the question yourself.
+#         - Your response must be exactly one word: CHAT or RAG.
+
+#         Question: "{user_input}"
+#         Answer with only one word: CHAT or RAG.
+#         """
+#         response = llm.invoke(prompt)
+#     return response.strip().upper()
+
+
+
 
 # ==========================
 # Chat State
@@ -243,7 +263,10 @@ if do_regen and st.session_state.messages:
             break
     if last_user:
         with st.spinner("Re-generating..."):
+
             new_answer, sources = run_rag(last_user)
+
+
 
             # Replace last assistant message or append if missing
             replaced = False
@@ -259,7 +282,6 @@ if do_regen and st.session_state.messages:
 
             # Save to memory
             memory.save_context({"question": last_user}, {"answer": new_answer})
-            print(sources)
             # UI: show updated assistant message
             with st.chat_message("assistant"):
                 st.markdown(new_answer)
@@ -270,6 +292,7 @@ if do_regen and st.session_state.messages:
                         for s in sources:
                             st.markdown(f"- {s}")
 
+        # st.rerun()
 
 # ==========================
 # Chat input flow
@@ -280,8 +303,37 @@ if user_q:
     st.session_state.messages.append({"role": "user", "content": user_q})
     with st.chat_message("user"):
         st.markdown(user_q)
-        
+
+    # ==========================
+    # Build FAISS query with memory
+    # ==========================
+    # mem_vars = memory.load_memory_variables({})
+    # history = mem_vars.get("history", "")
+    # chat_history = mem_vars.get("chat_history", "")
+
+    # faiss_query = "\n".join([history, chat_history, user_q]).strip()
+
+    # Retrieve context with score filtering
+
+
+
+    # with st.spinner("Retrieving context..."):
+    #     faiss_query = rewrite_question(user_q, memory)
+
+    #     results_with_scores = vectorstore.similarity_search_with_score(faiss_query, k=TOP_K_RESULTS)
+    #     filtered = [doc for doc, score in results_with_scores if score > 0.4]
+    #     sources = format_sources(filtered)
+
+    # # Build prompt with memory
+    # final_prompt = build_final_prompt(user_q, filtered)
+
+    # # Get answer from OpenRouter
+    # with st.spinner("Generating answer..."):
+    #     answer = get_llm_response(final_prompt)
+    
+
     answer,sources=run_rag(user_q)
+
     if answer:
         # UI: show assistant response
         st.session_state.messages.append({"role": "assistant", "content": answer})
